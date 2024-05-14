@@ -1,4 +1,4 @@
-dateModified: 1715673583
+dateModified: 1715710498
 email:
   fromEmail: vipinvarghese5656@gmail.com
   fromName: eventsite
@@ -13,9 +13,21 @@ fs:
     url: $ASSET_BASE_URL
 meta:
   __names__:
-    55f02652-e9b7-4bed-a876-878a7252c8d2: 'Hero title' # Hero title
+    1bbabd22-f17d-4475-9f42-9a13a6882035: Featured # Featured
+    3a8e3a14-62e9-4025-8602-d513f5352b90: Events # Events
+    4a28744e-c5ce-4744-99c0-d1bbc7e36e93: Home # Home
+    6f18ff8d-ac48-4eb4-ace6-401625c25d36: Assests # Assests
+    8a695f70-ffca-446b-96ac-ac2493e493b4: 'Show Date' # Show Date
+    8eabc7d4-5630-48c1-8971-9f9cfa7177a2: Photo # Photo
+    16f950d7-ae1e-417f-b71b-64801ce217ce: Entries1 # Entries1
+    39c29999-0131-4dd3-b941-79aef4186782: uploads # uploads
+    83b9d6b4-73ec-43b6-b321-df88c8b95ce5: 'Booking status' # Booking status
+    94a79c61-023e-48a3-8ee9-2c9a45015b67: 'test ctegorya' # test ctegorya
+    309fdb96-f1ad-44ac-95d9-70e9c26060c3: 'show details' # show details
     692f0414-fee9-43f6-a6f3-05148fd8c84d: eventsite # eventsite
-    e4487530-3eb3-4458-9110-a144be9e2342: Uploads # Uploads
+    24823da7-39c2-4403-b547-42e852b7c659: 'Hero Title' # Hero Title
+    a40e3d82-1ce7-4112-b144-916a23a9ba98: 'Show name' # Show name
+    e6183055-d2a7-440c-a436-46f01f8279e5: Showcard # Showcard
     f7fb0bf2-f2ec-47e1-ab5e-6f187ea36cc1: eventsite # eventsite
 system:
   edition: solo
