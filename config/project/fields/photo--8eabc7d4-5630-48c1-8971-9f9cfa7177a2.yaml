@@ -1,0 +1,37 @@
+columnSuffix: null
+handle: photo
+instructions: null
+name: Photo
+searchable: true
+settings:
+  allowSelfRelations: false
+  allowSubfolders: false
+  allowUploads: true
+  allowedKinds:
+    - image
+  branchLimit: null
+  defaultUploadLocationSource: 'volume:39c29999-0131-4dd3-b941-79aef4186782' # uploads
+  defaultUploadLocationSubpath: null
+  localizeRelations: false
+  maintainHierarchy: false
+  maxRelations: 1
+  minRelations: 1
+  previewMode: full
+  restrictFiles: true
+  restrictLocation: false
+  restrictedDefaultUploadSubpath: null
+  restrictedLocationSource: 'volume:39c29999-0131-4dd3-b941-79aef4186782' # uploads
+  restrictedLocationSubpath: null
+  selectionLabel: 'add a photo here'
+  showCardsInGrid: false
+  showSiteMenu: false
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  sources:
+    - 'volume:39c29999-0131-4dd3-b941-79aef4186782' # uploads
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: large
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

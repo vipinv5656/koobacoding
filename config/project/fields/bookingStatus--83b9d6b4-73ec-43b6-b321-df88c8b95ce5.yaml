@@ -1,0 +1,12 @@
+columnSuffix: null
+handle: bookingStatus
+instructions: null
+name: 'Booking status'
+searchable: false
+settings:
+  default: false
+  offLabel: 'Booking closed'
+  onLabel: 'Booking open'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

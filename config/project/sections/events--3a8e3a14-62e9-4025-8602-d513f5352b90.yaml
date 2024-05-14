@@ -1,0 +1,27 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  - 309fdb96-f1ad-44ac-95d9-70e9c26060c3 # show details
+handle: events
+maxAuthors: 1
+name: Events
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  692f0414-fee9-43f6-a6f3-05148fd8c84d: # eventsite
+    enabledByDefault: true
+    hasUrls: true
+    template: events/_entry
+    uriFormat: 'events/{slug}'
+type: channel

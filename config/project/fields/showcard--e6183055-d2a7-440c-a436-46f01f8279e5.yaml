@@ -1,0 +1,20 @@
+columnSuffix: null
+handle: showcard
+instructions: null
+name: Showcard
+searchable: false
+settings:
+  createButtonLabel: null
+  entryTypes:
+    - 309fdb96-f1ad-44ac-95d9-70e9c26060c3 # show details
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

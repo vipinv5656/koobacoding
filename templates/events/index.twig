@@ -1,0 +1,260 @@
+{# all card data #}
+<div class="wrapper wrapper--wide whats-on__wrapper tabs">
+
+
+    {# just announced card data #}
+    <div class="tabs__panel" data-tab-id="just-announced">
+        {% set justAnnounced = craft.entries()
+        .section('events')
+        .orderBy('dateCreated DESC')
+        .limit(6)
+        .all() %}
+        {% for announced in justAnnounced %}
+        {% set announcedPhoto = announced.photo.one() %}
+        <article class="card-link" style="transition-delay: 0s;">
+            <div class="card-link__image">
+                <a href="{{announced.url}}" class="card-link__image-link">
+                    <picture>
+                        <!-- 400 x 400 -->
+                        <img src="{{announcedPhoto.url}}" alt="{{announced.title}} " class="card-link__image-source">
+                    </picture>
+                </a>
+            </div>
+
+            <div class="card-link__content">
+                <div class="card-link__titles">
+                    <h3 class="h4 card-link__heading">
+                        <a class="card-link__heading-link" href="{{announced.url}}">{{announced.title}}
+                        </a>
+                    </h3>
+                    <p class="card-link__sub-heading">
+                        {% if announced.showDate is empty %}
+                        Dates to be announced
+                        {% endif %}
+                    </p>
+                </div>
+
+                <div class="card-link__info">
+                    <ul class="card-link__list">
+                        <li class="card-link__item">
+                            <span class="card-link__item-title">
+                                {% if announced.showDate %}
+                                On Sale
+                                {% endif %}
+                            </span>
+                            <span class="card-link__item-description">
+                                <time datetime="{{ announced.showDate|date('Y-m-d\\ TH:i') }}">{{
+                                    announced.showDate|date('D d
+                                    M Y') }}
+                                </time>
+                            </span>
+                        </li>
+
+                    </ul>
+
+                    <div class="card-link__ctas">
+                        <div class="inline-ctas">
+                            <a href="{{announced.url}}" class="inline-ctas__cta text-pink">
+                                <span class="inline-ctas__text">Learn more</span>
+                                <i class="icon-right-arrow inline-ctas__arrow"></i>
+                            </a>
+                            {% if announced.showDate is empty %}
+                            <a href="#" class="inline-ctas__cta text-white" download="">
+                                <i class="icon-calendar inline-ctas__icon"></i>
+                                <span class="inline-ctas__text">Remind me</span>
+                                <i class="icon-right-arrow inline-ctas__arrow"></i>
+                            </a>
+                            {% else %}
+
+
+                            <a href="/events/james-taylor-his-all-star-band" target="_blank" rel="noreferrer"
+                                class="inline-ctas__cta text-white">
+                                <i class="icon-ticket inline-ctas__icon"></i>
+                                <span class="inline-ctas__text">Buy Now</span>
+                                <i class="icon-right-arrow inline-ctas__arrow"></i>
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        {% endfor %}
+    </div>
+
+
+    {# upcoming card data#}
+    <div class="tabs__panel" data-tab-id="upcoming">
+
+        {% set upcomings = craft.entries()
+        .section('events')
+        .orderBy('showDate ASC')
+        .limit(6)
+        .all() %}
+
+
+        {% for upcoming in upcomings %}
+        {% set upcomingPhoto = upcoming.photo.one() %}
+        {% if upcoming.showDate %}
+        <article class="card-link" style="transition-delay: 450ms;">
+            <div class="card-link__image">
+                <a href="{{upcoming.url}}" class="card-link__image-link">
+                    <picture>
+                        <img src="{{upcomingPhoto.url}}" alt="{{upcoming.title}}" class="card-link__image-source">
+                    </picture>
+                </a>
+            </div>
+
+            <div class="card-link__content">
+                <div class="card-link__titles">
+                    <h3 class="h4 card-link__heading">
+                        <a class="card-link__heading-link" href="{{upcoming.url}}">{{upcoming.title}}
+                        </a>
+                    </h3>
+                    <p class="card-link__sub-heading">
+                        {% if upcoming.showDate %}
+                        <time datetime="{{ upcoming.showDate|date('Y-m-d\\ TH:i') }}">{{ upcoming.showDate|date('D d
+                            M Y') }}
+                        </time>
+                        {% endif %}
+                    </p>
+                </div>
+
+                <div class="card-link__info">
+                    <ul class="card-link__list">
+
+
+                    </ul>
+
+                    <div class="card-link__ctas">
+                        <div class="inline-ctas">
+
+                            <a href="{{ upcoming.url }}" class="inline-ctas__cta text-pink">
+                                <span class="inline-ctas__text">Learn more</span>
+                                <i class="icon-right-arrow inline-ctas__arrow"></i>
+                            </a>
+                            {% if upcoming.showDate %}
+                            <a href="" target="_blank" rel="noreferrer" class="inline-ctas__cta text-white">
+                                <i class="icon-ticket inline-ctas__icon"></i>
+                                <span class="inline-ctas__text">Buy Now</span>
+                                <i class="icon-right-arrow inline-ctas__arrow"></i>
+                            </a>
+
+                            {% else %}
+                            <a href="#" class="inline-ctas__cta text-white" download="">
+                                <i class="icon-calendar inline-ctas__icon"></i>
+                                <span class="inline-ctas__text">Remind me</span>
+                                <i class="icon-right-arrow inline-ctas__arrow"></i>
+                            </a>
+
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        {% endif %}
+        {% endfor %}
+    </div>
+
+    {# featured card data #}
+    <div class="tabs__panel" data-tab-id="featured">
+
+
+        {% set stories = craft.entries.section('events').limit(6).all() %}
+        {% for story in stories %}
+        {% set photo = story.photo.one() %}
+        {% if story.featured %}
+        <article class="card-link" style="transition-delay: 0s;">
+            <div class="card-link__image">
+                <a href="{{ story.url }}" class="card-link__image-link">
+                    <picture>
+                        <img src="{{ photo.url }}" alt="The War on Drugs " class="card-link__image-source">
+                    </picture>
+                </a>
+            </div>
+
+            <div class="card-link__content">
+                <div class="card-link__titles">
+                    <h3 class="h4 card-link__heading">
+                        <a class="card-link__heading-link" href="{{ story.url }}">{{ story.title }}
+                        </a>
+                    </h3>
+                    <p class="card-link__sub-heading">
+                        {% if story.showDate is empty %}
+                        Dates to be announced
+                        {% endif %}
+                    </p>
+                </div>
+
+                <div class="card-link__info">
+                    <ul class="card-link__list">
+                        <li class="card-link__item">
+                            <span class="card-link__item-title">
+                                {% if story.showDate %}
+                                On Sale
+                                {% endif %}
+                            </span>
+                            <span class="card-link__item-description">
+                                {% if story.showDate %}
+                                <time datetime="{{ story.showDate|date('Y-m-d\\ TH:i') }}">{{ story.showDate|date('D d
+                                    M Y') }}
+                                </time>
+                                {% endif %}
+                            </span>
+                        </li>
+
+                    </ul>
+
+                    <div class="card-link__ctas">
+                        <div class="inline-ctas">
+                            <a href="{{ story.url }}" class="inline-ctas__cta text-pink">
+                                <span class="inline-ctas__text">Learn more </span>
+                                <i class="icon-right-arrow inline-ctas__arrow"></i>
+                            </a>
+                            {% if story.showDate is empty %}
+                            <a href="" class="inline-ctas__cta text-white" download="">
+                                <i class="icon-calendar inline-ctas__icon"></i>
+                                <span class="inline-ctas__text">Remind me</span>
+                                <i class="icon-right-arrow inline-ctas__arrow"></i>
+                            </a>
+                            {% else %}
+                            <a href="" target="" rel="noreferrer" class="inline-ctas__cta text-white">
+                                <i class="icon-ticket inline-ctas__icon"></i>
+                                <span class="inline-ctas__text">Buy Now</span>
+                                <i class="icon-right-arrow inline-ctas__arrow"></i>
+                            </a>
+                            {% endif %}
+
+                            {# {% if story.bookingStatus is empty %}
+                            <span class="inline-ctas__cta text-white">
+                                <i class="icon-sold-out inline-ctas__icon"></i>
+                                <span class="inline-ctas__text">Sold Out</span>
+                            </span>
+
+                            {% endif %} #}
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        {% endif %}
+        {% endfor %}
+
+    </div>
+</div>
+
+{# footer #}
+<div class="whats-on__footer">
+    <a href="#" class="button">View All Shows</a>
+</div>
+
+
+</section>
