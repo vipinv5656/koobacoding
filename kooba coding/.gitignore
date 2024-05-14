@@ -1,0 +1,11 @@
+.DS_Store
+.idea
+
+node_modules
+HTML/website/dist
+HTML/website/build
+
+EE/.htaccess
+EE/.htpasswd
+EE/system/user/config/config.php
+EE/images
